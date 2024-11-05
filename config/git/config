@@ -1,0 +1,16 @@
+[alias]
+    graph = log --graph --abbrev-commit --oneline
+[branch]
+    sort = -committerdate
+[core]
+    editor = nvim
+    excludesFile = ~/.gitignore
+[diff]
+    tool = vimdiff
+[init]
+    defaultBranch = main
+[pull]
+    rebase = true
+[user]
+    name = Max van der Kolk
+    email = max.vanderkolk@vortech.nl
