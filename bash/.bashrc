@@ -50,3 +50,6 @@ log_bash_persistent_history()
 # Add to persistent history on running prompts.
 PROMPT_COMMAND="log_bash_persistent_history"
 export HISTTIMEFORMAT="%F %T  "
+
+# Add path for starship prompt.
+eval "$(starship init bash)"
