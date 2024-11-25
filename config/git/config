@@ -1,5 +1,6 @@
 [alias]
     graph = log --graph --abbrev-commit --oneline
+    rbc = rebase --continue
 [branch]
     sort = -committerdate
 [core]
