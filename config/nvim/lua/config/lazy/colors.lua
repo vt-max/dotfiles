@@ -1,12 +1,17 @@
 return {
     {
-        "savq/melange-nvim",
+        -- "savq/melange-nvim",
+        -- lazy = false,
+        -- priority = 1000,
+
+        "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
+        opts = {},
 
         config = function()
             vim.cmd("set termguicolors")
-            vim.cmd("colorscheme melange")
+            vim.cmd("colorscheme tokyonight-night")
         end
     }
 }
