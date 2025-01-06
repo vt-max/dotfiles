@@ -1,11 +1,19 @@
 return {
     'saghen/blink.cmp',
     lazy = false,
-    version = 'v0.7.6',
+    version = 'v0.9.0',
 
     opts = {
         keymap = {
             preset = 'default'
+        },
+
+        completion = {
+            accept = {
+                auto_brackets = {
+                    enabled = false
+                },
+            },
         },
 
         appearance = {
@@ -13,23 +21,11 @@ return {
             nerd_font_variant = 'mono',
         },
 
-        completion = {
-            menu = {
-                draw = {
-                    columns = {
-                        { "label", "label_description", gap = 1 },
-                        { "kind" }
-                    },
-                }
-            },
-        },
-
         sources = {
-            completion = {
-                enabled_providers = { 'lsp', 'path', 'buffer' },
-            },
+            default = { 'lsp', 'path', 'buffer' },
+            cmdline = {},
         },
     },
 
-    opts_extend = { "sources.completion.enabled_providers" }
+    opts_extend = { "sources.default" }
 }
