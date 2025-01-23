@@ -1,5 +1,5 @@
 return {
-    {
+    -- {
         -- "savq/melange-nvim",
         -- lazy = false,
         -- priority = 1000,
@@ -12,18 +12,65 @@ return {
         --     vim.cmd("set termguicolors")
         --     vim.cmd("colorscheme tokyonight-night")
         -- end
+    -- }
 
-        "catppuccin/nvim",
-        priority = 1000,
+    -- {
+    --     "zenbones-theme/zenbones.nvim",
+    --     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    --     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    --     -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    --     dependencies = "rktjmp/lush.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --
+    --     config = function()
+    --         vim.g.zenbones_darken_comments = 10
+    --         vim.cmd("set termguicolors")
+    --         vim.cmd("colorscheme zenbones")
+    --     end
+    -- }
 
-        config = function()
-            require("catppuccin").setup({
-                flavour = "mocha",
-                no_italic = true,
-            })
-            vim.cmd("colorscheme catppuccin")
-        end
-    }
+    -- {
+    --     "catppuccin/nvim",
+    --     priority = 1000,
+    --
+    --     config = function()
+    --         require("catppuccin").setup({
+    --             flavour = "mocha",
+    --             no_italic = true,
+    --         })
+    --         -- vim.cmd("colorscheme catppuccin")
+    --     end
+    -- }
+
+    -- {
+    --     "zenbones-theme/zenbones.nvim",
+    --     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    --     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    --     -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    --     dependencies = "rktjmp/lush.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --
+    --     config = function()
+    --         vim.g.zenbones_italic_comments = false
+    --         vim.cmd("set termguicolors")
+    --         vim.cmd("colorscheme zenbones")
+    --     end
+    -- }
+
+    -- {
+    --     'comfysage/evergarden',
+    --     priority = 1000,
+    --
+    --     config = function()
+    --         require("evergarden").setup({
+    --             transparent_background = false,
+    --             variant = "hard",
+    --         })
+    --         vim.cmd("colorscheme evergarden")
+    --     end
+    -- }
 
     -- {
     --     "ellisonleao/gruvbox.nvim",

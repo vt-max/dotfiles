@@ -18,7 +18,13 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.cursorline = true
 
+-- Probably only want this for Markdown?
+vim.opt.breakindentopt = { "shift:2", "sbr" }
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 vim.opt.scrolloff = 5
+
+vim.opt.termguicolors = true
 
 -- These seem no longer needed.
 vim.api.nvim_create_autocmd("FileType", {
