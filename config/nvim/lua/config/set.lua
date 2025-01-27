@@ -16,15 +16,29 @@ vim.opt.undofile = true
 
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.cursorline = true
-
--- Probably only want this for Markdown?
-vim.opt.breakindentopt = { "shift:2", "sbr" }
-vim.opt.linebreak = true
-vim.opt.breakindent = true
 vim.opt.scrolloff = 5
 
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
+vim.api.nvim_command("colorscheme vim")
+
+-- The SignColumn can just be black.
+vim.api.nvim_set_hl(0, "SignColumn", {})
+
+-- Make code comments stand out more.
+vim.api.nvim_set_hl(0, "Comment", { ctermfg = "green" })
+
+-- Change the use of pink colors in Popup menus.
+vim.api.nvim_set_hl(0, "Pmenu", { ctermbg = "black" })
+vim.api.nvim_set_hl(0, "PmenuSel", { ctermfg = "black", ctermbg = "darkgreen" })
+
+-- Only a slight highlight on the current line.
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "screenline"
+vim.api.nvim_set_hl(0, "CursorLine", { ctermbg = "black" })
+
+-- Show spelling mistakes through undercurl.
+vim.api.nvim_set_hl(0, "SpellBad", { sp = "red", undercurl = true })
+vim.api.nvim_set_hl(0, "SpellCap", { sp = "blue", undercurl = true })
 
 -- These seem no longer needed.
 vim.api.nvim_create_autocmd("FileType", {
@@ -74,11 +88,40 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
         vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set("n", "<leader>vl", function() vim.diagnostic.open_float({ "line" }) end, opts)
         vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     end
 })
 
--- How to define directly in lua?
-vim.cmd [[:command! -bar -nargs=* Jump cexpr system('git jump --stdout ' . expand(<q-args>)) ]]
+-- Enable spell checking for certain files.
+local _ = vim.api.nvim_create_augroup("Spellcheck", { clear = true })
+
+local spell_types = { "text", "plaintex", "typst", "gitcommit", "markdown" }
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = "Spellcheck",
+    pattern = spell_types,
+    callback = function()
+        vim.opt_local.spell = true
+    end
+})
+
+-- Enable soft wrap with indentation for Markdown
+local _ = vim.api.nvim_create_augroup("CustomSoftWrap", { clear = true })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+    group = "CustomSoftWrap",
+    pattern = { "markdown" },
+    callback = function()
+        vim.opt_local.wrap = true
+        vim.opt_local.breakindent = true
+        vim.opt_local.breakindentopt = "shift:2"
+        vim.opt_local.linebreak = true
+        vim.opt_local.splitright = true
+        local opts = { expr = true, silent = true, buffer = true, }
+        vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", opts)
+        vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", opts)
+    end
+})

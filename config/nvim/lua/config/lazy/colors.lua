@@ -1,37 +1,23 @@
 return {
     -- {
-        -- "savq/melange-nvim",
-        -- lazy = false,
-        -- priority = 1000,
-
-        -- "folke/tokyonight.nvim", lazy = false,
-        -- priority = 1000,
-        -- opts = {},
-        --
-        -- config = function()
-        --     vim.cmd("set termguicolors")
-        --     vim.cmd("colorscheme tokyonight-night")
-        -- end
-    -- }
-
-    -- {
-    --     "zenbones-theme/zenbones.nvim",
-    --     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
-    --     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
-    --     -- In Vim, compat mode is turned on as Lush only works in Neovim.
-    --     dependencies = "rktjmp/lush.nvim",
-    --     lazy = false,
+    --     'comfysage/evergarden',
     --     priority = 1000,
     --
     --     config = function()
-    --         vim.g.zenbones_darken_comments = 10
-    --         vim.cmd("set termguicolors")
-    --         vim.cmd("colorscheme zenbones")
+    --         require("evergarden").setup({
+    --             variant = "hard",
+    --             style = {
+    --                 comment = {},
+    --             },
+    --         })
+    --
+    --         vim.cmd("colorscheme evergarden")
     --     end
     -- }
 
     -- {
     --     "catppuccin/nvim",
+    --     name = "catppuccin",
     --     priority = 1000,
     --
     --     config = function()
@@ -39,7 +25,30 @@ return {
     --             flavour = "mocha",
     --             no_italic = true,
     --         })
-    --         -- vim.cmd("colorscheme catppuccin")
+    --
+    --         vim.cmd("colorscheme catppuccin")
+    --     end
+    --
+    -- }
+
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    --
+    --     config = function()
+    --         require("tokyonight").setup({
+    --             -- styles = {
+    --             --     comments = { italic = false },
+    --             --     keywords = { italic = false },
+    --             -- },
+    --             on_colors = function(colors)
+    --                 colors.comment = colors.orange
+    --             end
+    --         })
+    --
+    --         vim.cmd("colorscheme tokyonight-night")
     --     end
     -- }
 
@@ -51,49 +60,60 @@ return {
     --     dependencies = "rktjmp/lush.nvim",
     --     lazy = false,
     --     priority = 1000,
-    --
-    --     config = function()
-    --         vim.g.zenbones_italic_comments = false
-    --         vim.cmd("set termguicolors")
-    --         vim.cmd("colorscheme zenbones")
-    --     end
+    --     -- you can set set configuration options here
+    --     -- config = function()
+    --     --     vim.g.zenbones_darken_comments = 45
+    --     --     vim.cmd.colorscheme('zenbones')
+    --     -- end
     -- }
 
     -- {
-    --     'comfysage/evergarden',
-    --     priority = 1000,
+    --     "rebelot/kanagawa.nvim",
     --
     --     config = function()
-    --         require("evergarden").setup({
-    --             transparent_background = false,
-    --             variant = "hard",
+    --         require('kanagawa').setup({
+    --             compile = false, -- enable compiling the colorscheme
+    --             commentStyle = { italic = true },
+    --             keywordStyle = { italic = true },
+    --             statementStyle = { bold = true },
+    --             background = {     -- map the value of 'background' option to a theme
+    --                 dark = "wave", -- try "dragon" !
+    --                 light = "lotus"
+    --             },
+    --             colors = {
+    --                 theme = {
+    --                     all = {
+    --                         ui = {
+    --                             bg_gutter = "none",
+    --                         }
+    --                     }
+    --                 }
+    --             }
     --         })
-    --         vim.cmd("colorscheme evergarden")
+    --
+    --         vim.cmd("colorscheme kanagawa")
     --     end
     -- }
 
     -- {
     --     "ellisonleao/gruvbox.nvim",
-    --     lazy = false,
     --     priority = 1000,
-    --     opts = {},
-    --
-    --
     --     config = function()
     --         require("gruvbox").setup({
-    --             contrast = "hard",
-    --             italic = {
-    --                 strings = false,
-    --                 emphasis = false,
-    --                 comments = false,
-    --                 operators = false,
-    --                 folds = false,
-    --             },
     --             transparent_mode = true,
     --         })
     --
-    --         vim.cmd("set termguicolors")
     --         vim.cmd("colorscheme gruvbox")
+    --     end
+    -- }
+
+    -- {
+    --     "EdenEast/nightfox.nvim",
+    --     config = function()
+    --         require("nightfox").setup({
+    --         })
+    --
+    --         vim.cmd("colorscheme carbonfox")
     --     end
     -- }
 }
