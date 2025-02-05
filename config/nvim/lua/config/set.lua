@@ -17,28 +17,17 @@ vim.opt.undofile = true
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.scrolloff = 5
-
-vim.opt.termguicolors = false
-vim.api.nvim_command("colorscheme vim")
-
--- The SignColumn can just be black.
-vim.api.nvim_set_hl(0, "SignColumn", {})
-
--- Make code comments stand out more.
-vim.api.nvim_set_hl(0, "Comment", { ctermfg = "green" })
-
--- Change the use of pink colors in Popup menus.
-vim.api.nvim_set_hl(0, "Pmenu", { ctermbg = "black" })
-vim.api.nvim_set_hl(0, "PmenuSel", { ctermfg = "black", ctermbg = "darkgreen" })
-
--- Only a slight highlight on the current line.
+vim.opt.termguicolors = true
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "screenline"
-vim.api.nvim_set_hl(0, "CursorLine", { ctermbg = "black" })
+vim.opt.cursorlineopt = "line"
 
--- Show spelling mistakes through undercurl.
-vim.api.nvim_set_hl(0, "SpellBad", { sp = "red", undercurl = true })
-vim.api.nvim_set_hl(0, "SpellCap", { sp = "blue", undercurl = true })
+-- See https://github.com/neovim/neovim/pull/14537
+-- Suggested on Reddit, either:
+-- `vim.o.diffopt = "internal,filler,closeoff,linematch:60"`
+-- or with histogram algorithm
+-- `vim.opt.diffopt="filler,internal,closeoff,algorithm:histogram,context:5,linematch:60"`
+
+vim.opt.diffopt = "filler,internal,closeoff,algorithm:histogram,context:5,linematch:60"
 
 -- These seem no longer needed.
 vim.api.nvim_create_autocmd("FileType", {
@@ -46,6 +35,10 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.opt.path:append("**")
+
+-- Configure default fuzzy search by not expanding the completion
+-- and enabling fuzzy matching for suggestions.
+vim.opt.completeopt = "menu,preview,noinsert,fuzzy"
 
 vim.opt.wildmode = "list:longest"
 vim.opt.wildignore = "*.o,*.swp,*.mod"

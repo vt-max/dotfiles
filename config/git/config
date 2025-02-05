@@ -7,7 +7,9 @@
     editor = nvim
     excludesFile = ~/.gitignore
 [diff]
-    tool = vimdiff
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [init]
     defaultBranch = main
 [pull]

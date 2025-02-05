@@ -51,5 +51,9 @@ log_bash_persistent_history()
 PROMPT_COMMAND="log_bash_persistent_history"
 export HISTTIMEFORMAT="%F %T  "
 
-# Add path for starship prompt.
-eval "$(starship init bash)"
+# Setup miniforge3
+eval "$(/home/max/miniforge3/bin/conda shell.bash hook)"
+
+export PODMAN_IGNORE_CGROUPSV1_WARNING=1
+
+source ~/.config/task.sh
