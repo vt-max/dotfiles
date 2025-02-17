@@ -52,20 +52,40 @@ return {
     --     end
     -- }
 
+    -- {
+    --     "zenbones-theme/zenbones.nvim",
+    --     dependencies = "rktjmp/lush.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --
+    --     config = function()
+    --         vim.g.neobones = {
+    --             darkness = nil,
+    --             italic_comments = false,
+    --         }
+    --         vim.opt.background = "light"
+    --         vim.cmd.colorscheme('default')
+    --     end
+    -- }
+
     {
-        "zenbones-theme/zenbones.nvim",
-        dependencies = "rktjmp/lush.nvim",
+        "miikanissi/modus-themes.nvim",
         lazy = false,
         priority = 1000,
 
         config = function()
-            vim.g.neobones = {
-                darkness = nil,
-                italic_comments = false,
-            }
-            vim.cmd.colorscheme('neobones')
+            require("modus-themes").setup({
+                line_nr_column_background = false,
+                sign_column_background = false,
+                styles = {
+                    comments = { italic = false },
+                    keywords = { italic = false },
+                },
+            })
+            vim.cmd.colorscheme('modus_vivendi')
         end
     }
+
 
     -- {
     --     "rebelot/kanagawa.nvim",
