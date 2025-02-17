@@ -1,8 +1,7 @@
 return {
     'saghen/blink.cmp',
     lazy = false,
-    version = 'v0.11.0',
-
+    version = 'v0.12.4',
 
     opts = {
         keymap = {
@@ -40,7 +39,10 @@ return {
 
         sources = {
             default = { 'lsp', 'path', 'buffer' },
-            cmdline = {},
+        },
+
+        cmdline = {
+            sources = {},
         },
 
         signature = {
