@@ -42,7 +42,7 @@ return {
         },
 
         cmdline = {
-            sources = {},
+            enabled = false,
         },
 
         signature = {
