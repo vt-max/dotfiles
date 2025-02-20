@@ -18,15 +18,13 @@ vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.scrolloff = 5
 vim.opt.termguicolors = true
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.cursorlineopt = "line"
 
 -- See https://github.com/neovim/neovim/pull/14537
 -- Suggested on Reddit, either:
 -- `vim.o.diffopt = "internal,filler,closeoff,linematch:60"`
 -- or with histogram algorithm
--- `vim.opt.diffopt="filler,internal,closeoff,algorithm:histogram,context:5,linematch:60"`
-
 vim.opt.diffopt = "filler,internal,closeoff,algorithm:histogram,context:5,linematch:60"
 
 -- These seem no longer needed.
@@ -35,11 +33,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.opt.path:append("**")
-
--- Configure default fuzzy search by not expanding the completion
--- and enabling fuzzy matching for suggestions.
-vim.opt.completeopt = "menu,preview,noinsert,fuzzy"
-
 vim.opt.wildmode = "list:longest"
 vim.opt.wildignore = "*.o,*.swp,*.mod"
 
