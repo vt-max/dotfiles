@@ -32,6 +32,17 @@ return {
     -- }
 
     -- {
+    --     "savq/melange-nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --
+    --     config = function()
+    --         vim.opt.termguicolors = true
+    --         vim.cmd("colorscheme melange")
+    --     end
+    -- }
+
+    -- {
     --     "folke/tokyonight.nvim",
     --     lazy = false,
     --     priority = 1000,
@@ -43,9 +54,9 @@ return {
     --             --     comments = { italic = false },
     --             --     keywords = { italic = false },
     --             -- },
-    --             on_colors = function(colors)
-    --                 colors.comment = colors.orange
-    --             end
+    --             -- on_colors = function(colors)
+    --             --     colors.comment = colors.orange
+    --             -- end
     --         })
     --
     --         vim.cmd("colorscheme tokyonight-night")
@@ -78,8 +89,8 @@ return {
                 line_nr_column_background = false,
                 sign_column_background = false,
                 styles = {
-                    comments = { italic = false },
-                    keywords = { italic = false },
+                    comments = { italic = true },
+                    keywords = { italic = true },
                 },
             })
             vim.cmd.colorscheme('modus_vivendi')
