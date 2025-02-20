@@ -93,7 +93,9 @@ return {
                     keywords = { italic = true },
                 },
             })
-            vim.cmd.colorscheme('modus_vivendi')
+            vim.cmd.colorscheme('modus_operandi')
+            -- Make diffs within lines stand out more.
+            vim.api.nvim_set_hl(0, "DiffChange", { fg = "NONE", bg = "#ffddff" })
         end
     }
 
