@@ -3,8 +3,8 @@ source /home/linuxbrew/.linuxbrew/etc/bash_completion.d/git-prompt.sh
 
 # Environment variable configuration.
 export CLICOLOR=1
-export EDITOR='TERM=wezterm nvim'
-export VISUAL='TERM=wezterm nvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # Prompt configuration.
 export PROMPT_DIRTRIM=2
