@@ -33,6 +33,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # Enable fzf integration for Bash and fzf-git support.
 eval "$(fzf --bash)"
 source ~/.local/bin/fzf-git.sh
+export FZF_DEFAULT_OPTS='--color=light'
 
 # Configure persistent bash history.
 log_bash_persistent_history()

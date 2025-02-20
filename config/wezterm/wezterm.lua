@@ -3,7 +3,7 @@ local mux = wezterm.mux
 
 local config = {}
 
-config.color_scheme = 'Modus-Operandi'
+config.color_scheme = 'Catppuccin Latte'
 
 config.default_domain = 'WSL:Ubuntu'
 

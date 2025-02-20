@@ -15,21 +15,24 @@ return {
     --     end
     -- }
 
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     priority = 1000,
-    --
-    --     config = function()
-    --         require("catppuccin").setup({
-    --             flavour = "mocha",
-    --             no_italic = true,
-    --         })
-    --
-    --         vim.cmd("colorscheme catppuccin")
-    --     end
-    --
-    -- }
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+
+        config = function()
+            require("catppuccin").setup({
+                flavour = "latte",
+                integrations = {
+                    cmp = false,
+                    blink_cmp = true,
+                }
+            })
+
+            vim.cmd("colorscheme catppuccin")
+        end
+
+    }
 
     -- {
     --     "savq/melange-nvim",
@@ -79,25 +82,25 @@ return {
     --     end
     -- }
 
-    {
-        "miikanissi/modus-themes.nvim",
-        lazy = false,
-        priority = 1000,
-
-        config = function()
-            require("modus-themes").setup({
-                line_nr_column_background = false,
-                sign_column_background = false,
-                styles = {
-                    comments = { italic = true },
-                    keywords = { italic = true },
-                },
-            })
-            vim.cmd.colorscheme('modus_operandi')
-            -- Make diffs within lines stand out more.
-            vim.api.nvim_set_hl(0, "DiffChange", { fg = "NONE", bg = "#ffddff" })
-        end
-    }
+    -- {
+    --     "miikanissi/modus-themes.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --
+    --     config = function()
+    --         require("modus-themes").setup({
+    --             line_nr_column_background = false,
+    --             sign_column_background = false,
+    --             styles = {
+    --                 comments = { italic = true },
+    --                 keywords = { italic = true },
+    --             },
+    --         })
+    --         vim.cmd.colorscheme('modus_operandi')
+    --         -- Make diffs within lines stand out more.
+    --         vim.api.nvim_set_hl(0, "DiffChange", { fg = "NONE", bg = "#ffddff" })
+    --     end
+    -- }
 
 
     -- {
