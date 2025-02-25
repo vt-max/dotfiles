@@ -7,6 +7,7 @@ return {
         config = function()
             require("catppuccin").setup({
                 flavour = "latte",
+                no_italic = true,
                 integrations = {
                     cmp = false,
                     blink_cmp = true,
