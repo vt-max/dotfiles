@@ -3,15 +3,34 @@
     rbc = rebase --continue
 [branch]
     sort = -committerdate
+[column]
+    ui = auto
+[commit]
+    verbose = true
 [core]
     editor = nvim
     excludesFile = ~/.gitignore
+    pager = delta
+[delta]
+    features = catppuccin-mocha
+    dark = true
+    navigate = true
 [diff]
+    algorithm = histogram
+    colorMoved = plain
     tool = nvimdiff
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[fetch]
+    prune = true
 [init]
     defaultBranch = main
+[include]
+    path = ~/.config/git-delta/catppuccin.gitconfig
+[interactive]
+    difffilter = delta --color-only
+[merge]
+    conflictstyle = zdiff3
 [pull]
     rebase = true
 [user]
