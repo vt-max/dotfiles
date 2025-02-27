@@ -6,7 +6,7 @@ return {
 
         config = function()
             require("catppuccin").setup({
-                flavour = "latte",
+                flavour = "mocha",
                 no_italic = true,
                 integrations = {
                     cmp = false,
