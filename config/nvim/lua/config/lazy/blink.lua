@@ -1,7 +1,7 @@
 return {
     'saghen/blink.cmp',
     lazy = false,
-    version = 'v0.12.4',
+    version = 'v0.13.0',
 
     opts = {
         keymap = {
@@ -28,7 +28,7 @@ return {
 
         appearance = {
             use_nvim_cmp_as_default = true,
-            nerd_font_variant = 'normal',
+            nerd_font_variant = 'mono',
         },
 
         sources = {
