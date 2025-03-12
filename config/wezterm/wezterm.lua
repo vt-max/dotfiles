@@ -3,7 +3,12 @@ local mux = wezterm.mux
 
 local config = {}
 
-config.color_scheme = 'Catppuccin Latte'
+local colors, _ = wezterm.color.load_base16_scheme("C:/Users/max.vanderkolk/AppData/Local/wezterm/minicyan.yaml")
+
+config.color_schemes = {
+    ["minicyan"] = colors
+}
+config.color_scheme = 'minicyan'
 
 config.default_domain = 'WSL:Ubuntu'
 
