@@ -10,9 +10,7 @@
 [core]
     editor = nvim
     excludesFile = ~/.gitignore
-    pager = delta
 [delta]
-    features = catppuccin-mocha
     dark = true
     navigate = true
 [diff]
@@ -25,10 +23,6 @@
     prune = true
 [init]
     defaultBranch = main
-[include]
-    path = ~/.config/git-delta/catppuccin.gitconfig
-[interactive]
-    difffilter = delta --color-only
 [merge]
     conflictstyle = zdiff3
 [pull]

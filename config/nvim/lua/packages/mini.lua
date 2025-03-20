@@ -3,6 +3,7 @@ local keymap = vim.keymap.set
 -- Colorscheme.
 MiniDeps.now(function()
     require("mini.base16")
+    vim.opt.background = "dark"
     vim.cmd("colorscheme minicyan")
 end)
 
@@ -44,7 +45,11 @@ end)
 
 -- Notification system.
 MiniDeps.now(function()
-    require("mini.notify").setup()
+    require("mini.notify").setup({
+        lsp_progress = {
+            enable = false,
+        },
+    })
     vim.notify = require("mini.notify").make_notify()
 end)
 
