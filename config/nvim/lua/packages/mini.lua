@@ -3,6 +3,7 @@ local keymap = vim.keymap.set
 -- Colorscheme.
 MiniDeps.now(function()
     require("mini.base16")
+    -- vim.opt.background = "light"
     vim.opt.background = "dark"
     vim.cmd("colorscheme minicyan")
 end)
@@ -65,11 +66,6 @@ MiniDeps.later(function()
     keymap("n", "<leader>sg", function() require("mini.pick").builtin.grep_live() end)
     keymap("n", "<leader>sh", function() require("mini.pick").builtin.help() end)
     keymap("n", "<leader>sw", function() require("mini.pick").builtin.grep() end)
-end)
-
--- Statusline updates.
-MiniDeps.later(function()
-    require("mini.statusline").setup()
 end)
 
 -- Trailing whitespace visualisation.

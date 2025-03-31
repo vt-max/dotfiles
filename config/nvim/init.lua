@@ -27,6 +27,7 @@ end)
 
 -- Load up the different plugins.
 require("packages.conform")
+require("packages.colors")
 require("packages.diffview")
 require("packages.grapple")
 require("packages.lsp")
