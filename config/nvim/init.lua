@@ -26,6 +26,7 @@ MiniDeps.now(function()
 end)
 
 -- Load up the different plugins.
+require("packages.completion")
 require("packages.conform")
 require("packages.colors")
 require("packages.diffview")

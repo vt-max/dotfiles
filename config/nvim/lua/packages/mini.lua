@@ -8,12 +8,6 @@ MiniDeps.now(function()
     vim.cmd("colorscheme minicyan")
 end)
 
--- Completion system.
--- TODO: Make Ctrl-Y hit the auto complete.
-MiniDeps.later(function()
-    require("mini.completion").setup()
-end)
-
 -- Diff support for git gutter highlighting.
 MiniDeps.later(function()
     require("mini.diff").setup({
