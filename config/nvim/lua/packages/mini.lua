@@ -1,13 +1,5 @@
 local keymap = vim.keymap.set
 
--- Colorscheme.
-MiniDeps.now(function()
-    require("mini.base16")
-    -- vim.opt.background = "light"
-    vim.opt.background = "dark"
-    vim.cmd("colorscheme minicyan")
-end)
-
 -- Diff support for git gutter highlighting.
 MiniDeps.later(function()
     require("mini.diff").setup({
