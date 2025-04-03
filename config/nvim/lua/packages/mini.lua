@@ -22,7 +22,7 @@ MiniDeps.now(function()
         },
     })
 
-    keymap("n", "<leader>bb", function() require("mini.files").open() end)
+    keymap("n", "<leader>bb", function() require("mini.files").open(vim.api.nvim_buf_get_name(0)) end)
 end)
 
 -- Icon support
