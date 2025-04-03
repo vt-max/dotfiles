@@ -12,6 +12,7 @@ MiniDeps.later(function()
     })
 
     -- vim.opt.background = "light"
+    -- vim.cmd("colorscheme tokyonight-day")
     vim.opt.background = "dark"
     vim.cmd("colorscheme tokyonight-storm")
 end)
