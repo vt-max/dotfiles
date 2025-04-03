@@ -5,6 +5,12 @@ MiniDeps.later(function()
     })
 
     require("blink.cmp").setup({
+        completion = {
+            accept = {
+                auto_brackets = { enabled = false }
+            },
+        },
+
         signature = {
             enabled = true,
         },
