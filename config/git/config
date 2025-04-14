@@ -1,18 +1,22 @@
+[user]
+        name = Max van der Kolk
+        email = max.vanderkolk@vortech.nl
+[core]
+        editor = nvim
+[init]
+        defaultBranch = main
+[pull]
+        rebase = true
 [alias]
     graph = log --graph --abbrev-commit --oneline
     rbc = rebase --continue
 [branch]
     sort = -committerdate
-[column]
-    ui = auto
 [commit]
     verbose = true
 [core]
     editor = nvim
     excludesFile = ~/.gitignore
-[delta]
-    dark = true
-    navigate = true
 [diff]
     algorithm = histogram
     colorMoved = plain
@@ -27,6 +31,3 @@
     conflictstyle = zdiff3
 [pull]
     rebase = true
-[user]
-    name = Max van der Kolk
-    email = max.vanderkolk@vortech.nl

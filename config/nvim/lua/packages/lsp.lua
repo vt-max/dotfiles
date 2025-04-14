@@ -1,5 +1,5 @@
 -- LSP
-MiniDeps.later(function()
+MiniDeps.now(function()
     MiniDeps.add({
         source = 'neovim/nvim-lspconfig',
         depends = {
@@ -12,21 +12,26 @@ MiniDeps.later(function()
 
     require("mason-lspconfig").setup_handlers({
         function(server_name)
-            require("lspconfig")[server_name].setup({})
+            require("lspconfig")[server_name].setup({
+            })
         end,
-
     })
 
     local lspconfig = require("lspconfig")
 
     lspconfig.rust_analyzer.setup({
         settings = {
-            ["rust_analyzer"] = {
+            ["rust-analyzer"] = {
                 cargo = {
                     allFeatures = true,
                 },
+                completion = {
+                    postfix = {
+                        enable = false,
+                    },
+                },
             },
-        }
+        },
     })
 
     lspconfig.lua_ls.setup({
