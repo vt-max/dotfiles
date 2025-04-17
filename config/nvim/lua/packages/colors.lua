@@ -11,6 +11,7 @@ MiniDeps.now(function()
     vim.g.gruvbox_material_enable_italic = false
     vim.g.gruvbox_material_float_style = "dim"
     vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
+    vim.g.gruvbox_material_ui_contrast = "high"
 
     vim.cmd("colorscheme gruvbox-material")
 end)
