@@ -20,11 +20,15 @@
 [diff]
     algorithm = histogram
     colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
     tool = nvimdiff
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [fetch]
     prune = true
+    pruneTags = true
+    all = true
 [init]
     defaultBranch = main
 [merge]
