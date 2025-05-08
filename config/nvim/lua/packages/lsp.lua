@@ -3,18 +3,15 @@ MiniDeps.now(function()
     MiniDeps.add({
         source = 'neovim/nvim-lspconfig',
         depends = {
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
+            'mason-org/mason.nvim',
+            'mason-org/mason-lspconfig.nvim',
         }
     })
 
     require("mason").setup()
 
-    require("mason-lspconfig").setup_handlers({
-        function(server_name)
-            require("lspconfig")[server_name].setup({
-            })
-        end,
+    require("mason-lspconfig").setup({
+        automatic_enable = true,
     })
 
     local lspconfig = require("lspconfig")
